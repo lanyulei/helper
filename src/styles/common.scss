@@ -1,6 +1,13 @@
 .common-title {
-    font-size: 15px;
-    color: #333;
+    font-size: 14px;
+    color: #334155;
+    padding-left: 5px;
+    border-left: 3px solid #334155;
+    height: 14px;
+    span {
+        position: relative;
+        bottom: 3.5px;
+    }
 }
 
 .common-overflow {

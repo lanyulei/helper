@@ -12,10 +12,13 @@
   "app": {
     "windows": [
       {
-        "title": "helper",
+        "title": "Jarvis",
         "width": 800,
-        "height": 600
-        
+        "height": 600,
+        "label": "HelperHome",
+        "url": "/home",
+        "resizable": true,
+        "fullscreen": false
       }
     ],
     "security": {

@@ -3,10 +3,23 @@ import Menu from "@/components/layout/menu/index.vue";
 </script>
 
 <template>
-  <Menu></Menu>
-  <div class="flex-1 h-full overflow-y-auto pb-0.5">
-    <router-view></router-view>
+  <div id="helper-app">
+    <Menu></Menu>
+    <div class="helper-router-view">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+#helper-app {
+  display: flex;
+  .helper-router-view {
+    width: 100%;
+    margin-left: 15px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    padding: 10px;
+  }
+}
+</style>

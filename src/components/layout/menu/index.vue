@@ -4,19 +4,19 @@
       <img :src="LogoIcon" alt="" width="38" />
     </div>
     <el-menu default-active="1" :collapse="true" class="helper-el-menu">
-      <el-menu-item index="1">
-        <el-icon><img :src="HomeIcon" alt="" width="18" /></el-icon>
+      <el-menu-item index="1" @click="handleRouter('/home')">
+        <el-icon><Reading /></el-icon>
         <template #title>首页</template>
       </el-menu-item>
-      <el-menu-item index="2">
+      <el-menu-item index="2" @click="handleRouter('/tools')">
         <el-icon><CopyDocument /></el-icon>
         <template #title>工具</template>
       </el-menu-item>
-      <el-menu-item index="3">
+      <el-menu-item index="3" @click="handleRouter('/chat')">
         <el-icon><ChatLineRound /></el-icon>
         <template #title>聊天</template>
       </el-menu-item>
-      <el-menu-item index="4">
+      <el-menu-item index="4" @click="handleRouter('/settings')">
         <el-icon><Setting /></el-icon>
         <template #title>设置</template>
       </el-menu-item>
@@ -29,10 +29,23 @@
 </template>
 
 <script setup lang="ts">
-import { ChatLineRound, CopyDocument, Setting } from "@element-plus/icons-vue";
-import HomeIcon from "@/assets/images/home.svg";
+import {
+  ChatLineRound,
+  CopyDocument,
+  Reading,
+  Setting,
+} from "@element-plus/icons-vue";
+
 import LogoIcon from "@/assets/images/logo.png";
 import UserAvatarIcon from "@/assets/images/user-avatar.jpeg";
+
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+
+const handleRouter = (path: string) => {
+  router.push(path);
+};
 </script>
 
 <style lang="scss" scoped>
@@ -53,6 +66,8 @@ import UserAvatarIcon from "@/assets/images/user-avatar.jpeg";
   }
 
   .helper-avatar {
+    padding-top: 2px;
+    padding-bottom: 3px;
     img {
       border-radius: 50%;
     }
