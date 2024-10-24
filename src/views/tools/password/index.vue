@@ -91,7 +91,7 @@ const resetForm = () => {
 };
 
 const handleAdd = async () => {
-  await Database.load("sqlite:sqlite.db");
+  await Database.load("sqlite:/Users/admin/projects/rust/helper/sqlite.db");
 
   ruleFormRef.value.resetFields();
   ruleForm.value = {
