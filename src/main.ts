@@ -11,5 +11,5 @@ const app = createApp(App);
 
 app.
 use(router).
-use(ElementPlus, { size: 'small' }).
+use(ElementPlus).
 mount("#app");

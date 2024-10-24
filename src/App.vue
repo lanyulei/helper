@@ -18,8 +18,8 @@ import Menu from "@/components/layout/menu/index.vue";
     width: 100%;
     margin-left: 15px;
     border-radius: 10px;
-    border: 1px solid #ddd;
-    padding: 10px;
+    // border: 1px solid #e6e5e5 !important;
+    // padding: 10px 15px 15px 15px;
   }
 }
 </style>

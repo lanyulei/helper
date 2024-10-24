@@ -1,8 +1,8 @@
 [package]
 name = "helper"
 version = "0.1.0"
-description = "A Tauri App"
-authors = ["you"]
+description = "Mr. Lan's personal assistant, his name is Jarvis."
+authors = ["Mr. Lan"]
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
@@ -22,4 +22,8 @@ tauri = { version = "2.0.0", features = [] }
 tauri-plugin-shell = "2.0.0"
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
+tauri-plugin-fs = "2"
 
+[dependencies.tauri-plugin-sql]
+features = ["sqlite"] # or "postgres", or "mysql"
+version = "2.0.0"

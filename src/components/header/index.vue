@@ -19,7 +19,7 @@ const props = defineProps<{
 <style lang="scss" scoped>
 .common-page-header {
   color: #334155;
-  line-height: 2rem;
+  line-height: 1.6rem;
   font-weight: 500;
   font-size: 19px;
 }

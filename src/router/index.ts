@@ -14,6 +14,10 @@ const routes = [
       component: () => import('@/views/tools/index.vue')
     },
     { 
+      path: '/tools/password', 
+      component: () => import('@/views/tools/password/index.vue')
+    },
+    { 
       path: '/settings', 
       component: () => import('@/views/settings/index.vue')
     },

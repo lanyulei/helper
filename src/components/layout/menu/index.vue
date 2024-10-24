@@ -64,7 +64,7 @@ window.onresize = () => {
 .helper-layout-menu {
   width: 64px;
   border-radius: 10px;
-  border: 1px solid #ddd !important;
+  border: 1px solid #e6e5e5 !important;
   height: 100%;
   .helper-menu-foot {
     position: absolute;
@@ -94,6 +94,7 @@ window.onresize = () => {
 
   :deep(.el-divider--horizontal) {
     margin: 10px 0 0 0;
+    border-top: 1px #e6e5e5 var(--el-border-style);
   }
 }
 </style>
