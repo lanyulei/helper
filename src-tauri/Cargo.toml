@@ -26,4 +26,4 @@ tauri-plugin-fs = "2"
 
 [dependencies.tauri-plugin-sql]
 features = ["sqlite"] # or "postgres", or "mysql"
-version = "2.0.0"
+version = "2"
