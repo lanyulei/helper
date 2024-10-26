@@ -1,5 +1,7 @@
 use tauri_plugin_sql::{Migration, MigrationKind};
 
+// mod tray;
+
 // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
 #[tauri::command]
 fn greet(name: &str) -> String {
@@ -43,6 +45,15 @@ END;",
     ];
 
     tauri::Builder::default()
+        .plugin(tauri_plugin_process::init())
+        // .setup(|app| {
+        //     #[cfg(all(desktop))]
+        //     {
+        //         let handle = app.handle();
+        //         tray::create_tray(handle)?;
+        //     }
+        //     Ok(())
+        // })
         .plugin(tauri_plugin_sql::Builder::new().build())
         .plugin(tauri_plugin_shell::init())
         .plugin(
