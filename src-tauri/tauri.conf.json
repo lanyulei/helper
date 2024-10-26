@@ -38,7 +38,7 @@
   },
   "plugins": {
     "sql": {
-      "preload": ["sqlite:/Users/admin/projects/rust/helper/sqlite.db"]
+      "preload": ["sqlite:sqlite.db"]
     }
   }
 }
