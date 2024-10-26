@@ -8,7 +8,9 @@
       <div class="helper-tools-password-header">
         <div class="helper-tools-password-header1">Password List</div>
         <div>
-          <el-icon @click="handleAdd"><Plus /></el-icon>
+          <el-tooltip effect="dark" content="新建密码" placement="top">
+            <el-icon @click="handleAdd"><Plus /></el-icon>
+          </el-tooltip>
         </div>
       </div>
       <div

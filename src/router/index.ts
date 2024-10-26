@@ -1,24 +1,28 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
 const routes = [
-    { 
-      path: '/home', 
+    {
+      path: '/home',
       component: () => import('@/views/home/index.vue')
     },
-    { 
-      path: '/chat', 
+    {
+      path: '/chat',
       component: () => import('@/views/chat/index.vue')
     },
-    { 
-      path: '/tools', 
+    {
+      path: '/tools',
       component: () => import('@/views/tools/index.vue')
     },
-    { 
-      path: '/tools/password', 
+    {
+      path: '/tools/password',
       component: () => import('@/views/tools/password/index.vue')
     },
-    { 
-      path: '/settings', 
+    {
+      path: '/tools/terminal/db',
+      component: () => import('@/views/tools/terminal/db.vue')
+    },
+    {
+      path: '/settings',
       component: () => import('@/views/settings/index.vue')
     },
   ];
