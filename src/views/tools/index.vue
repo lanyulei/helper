@@ -3,6 +3,12 @@
     title="工具"
     remarks="使用工具解决问题就像猴子找到香蕉一样轻松愉快！"
   ></CommonHeader>
+  <el-input
+    v-model="searchValue"
+    :prefix-icon="Search"
+    placeholder="请输入工具名称"
+    style="margin-bottom: 12px; width: 300px"
+  />
   <div class="helper-tools-group">
     <div class="common-title">
       <span>工作辅助</span>
@@ -27,13 +33,15 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from "vue";
 import CommonHeader from "@/components/header/index.vue";
-import { Lock } from "@element-plus/icons-vue";
+import { Lock, Search } from "@element-plus/icons-vue";
 import { useRouter } from "vue-router";
-
 import TerminalIcon from "@/assets/images/terminal.svg";
 
 const router = useRouter();
+const searchValue = ref("");
+const toolList = ref([]);
 
 const handleRouter = (path: string) => {
   router.push(path);
