@@ -8,32 +8,35 @@
     :prefix-icon="Search"
     placeholder="请输入工具名称"
     style="margin-bottom: 12px; width: 300px"
+    @input="handleFilterTools"
   />
   <div class="helper-tools-group">
     <div class="common-title">
       <span>工作辅助</span>
     </div>
     <div class="helper-tools-list">
-      <div class="helper-tools-div" @click="handleRouter('/tools/password')">
+      <div
+        v-for="item in filterTools"
+        :key="item.id"
+        class="helper-tools-div"
+        @click="handleRouter(item.path)"
+      >
         <div class="helper-tools-image">
-          <el-icon size="30"><Lock /></el-icon>
-        </div>
-        <div class="helper-tools-title common-overflow">密码管理</div>
-      </div>
-      <div class="helper-tools-div" @click="handleRouter('/tools/terminal/db')">
-        <div class="helper-tools-image">
-          <el-icon size="30">
-            <img :src="TerminalIcon" alt="" width="25" />
+          <el-icon size="30" v-if="item.iconType === 'element'">
+            <component :is="item.icon"> </component>
+          </el-icon>
+          <el-icon size="30" v-else-if="item.iconType === 'image'">
+            <img :src="item.icon" alt="" width="25" />
           </el-icon>
         </div>
-        <div class="helper-tools-title common-overflow">数据库终端</div>
+        <div class="helper-tools-title common-overflow">{{ item.label }}</div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, shallowRef } from "vue";
 import CommonHeader from "@/components/header/index.vue";
 import { Lock, Search } from "@element-plus/icons-vue";
 import { useRouter } from "vue-router";
@@ -41,7 +44,30 @@ import TerminalIcon from "@/assets/images/terminal.svg";
 
 const router = useRouter();
 const searchValue = ref("");
-const toolList = ref([]);
+const toolList = [
+  {
+    id: 1,
+    label: "密码管理",
+    icon: Lock,
+    iconType: "element",
+    path: "/tools/password",
+  },
+  {
+    id: 2,
+    label: "数据库终端",
+    icon: TerminalIcon,
+    iconType: "image",
+    path: "/tools/terminal/db",
+  },
+];
+const filterTools = shallowRef(toolList);
+
+const handleFilterTools = () => {
+  const lowerCaseLabel = searchValue.value.toLowerCase();
+  filterTools.value = toolList.filter((tool) =>
+    tool.label.toLowerCase().includes(lowerCaseLabel)
+  );
+};
 
 const handleRouter = (path: string) => {
   router.push(path);
